@@ -147,3 +147,31 @@ def eight_petal_rainbow(spread=None, color1=None, color2=None):
 		#ninja1.color(RAINBOW[k])
 		k += 1
 	turtle.done()
+
+
+
+
+Cycle = ["#CCE5FF", "#99CCFF", "#6666FF", "#3333FF", "#0000FF", "#0000CC", "#000099",
+         "#000066", "#000033", "#000066", "#000099", "#0000CC", "#0000FF", "#3333FF", "#6666FF", "#99CCFF"]
+
+def spiral_kleer(spread=None, color=None):
+	wn = turtle.Screen()
+	wn.bgcolor("#A0A0A0")        # set the window background color
+
+	if spread is None:
+		spread = 3
+
+	ninja1 = turtle.Turtle()
+	ninja1.speed(100)
+	ninja1.color(Cycle[0])
+	k = 0
+	for i in range(10000):
+		if i % 50 == 0:
+			k += 1
+		if k > len(Cycle)-1:
+			k = 0
+
+		ninja1.color(Cycle[k])
+		ninja1.forward(i*spread)
+		ninja1.right(143)
+	turtle.done()
